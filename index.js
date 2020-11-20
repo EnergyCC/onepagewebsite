@@ -6,40 +6,44 @@ const prevBtn = document.querySelector('#prev')
 const intervalTime = 5000;
 let slideInterval;
 
+let language;
+
+language = 1;
+
 // web content from json object
 // Navigation
-document.querySelector('.homeLink').innerHTML = jsonData.Language[0].ro.Navigation.Home;
-document.querySelector('.servicesLink').innerHTML = jsonData.Language[0].ro.Navigation.Services;
-document.querySelector('.galleryLink').innerHTML = jsonData.Language[0].ro.Navigation.Gallery;
-document.querySelector('.contactLink').innerHTML = jsonData.Language[0].ro.Navigation.Contact;
+document.querySelector('.homeLink').innerHTML = jsonData.Language[0].Navigation.Home;
+document.querySelector('.servicesLink').innerHTML = jsonData.Language[0].Navigation.Services;
+document.querySelector('.galleryLink').innerHTML = jsonData.Language[0].Navigation.Gallery;
+document.querySelector('.contactLink').innerHTML = jsonData.Language[0].Navigation.Contact;
 // landing page
-document.querySelector('#slideOne').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Landing.SlideOne[0];
-document.querySelector('#slideTwo').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Landing.SlideTwo[0];
-document.querySelector('#slideThree').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Landing.SlideThree[0];
-document.querySelector('#slideOne').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Landing.SlideOne[1];
-document.querySelector('#slideTwo').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Landing.SlideTwo[1];
-document.querySelector('#slideThree').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Landing.SlideThree[1];
+document.querySelector('#slideOne').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Landing.SlideOne[0];
+document.querySelector('#slideTwo').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Landing.SlideTwo[0];
+document.querySelector('#slideThree').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Landing.SlideThree[0];
+document.querySelector('#slideOne').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Landing.SlideOne[1];
+document.querySelector('#slideTwo').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Landing.SlideTwo[1];
+document.querySelector('#slideThree').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Landing.SlideThree[1];
 
 // Services page
-document.querySelector('.serviceTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceTitle;
+document.querySelector('.serviceTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceTitle;
 
-document.querySelector('.serviceOne').getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceOne.icon;
-document.querySelector('.serviceTwo').getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceTwo.icon;
-document.querySelector('.serviceThree').getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceThree.icon;
-document.querySelector('.serviceFour').getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceFour.icon;
-document.querySelector('.serviceFive').getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceFive.icon;
-document.querySelector('.serviceSix').getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceSix.icon;
-document.querySelector('.serviceSeven').getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceSeven.icon;
-document.querySelector('.serviceEight').getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceEight.icon;
+document.querySelector('.serviceOne').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceOne.icon;
+document.querySelector('.serviceTwo').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceTwo.icon;
+document.querySelector('.serviceThree').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceThree.icon;
+document.querySelector('.serviceFour').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceFour.icon;
+document.querySelector('.serviceFive').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceFive.icon;
+document.querySelector('.serviceSix').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceSix.icon;
+document.querySelector('.serviceSeven').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceSeven.icon;
+document.querySelector('.serviceEight').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceEight.icon;
 
-document.querySelector('.serviceOne').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceOne.title;
-document.querySelector('.serviceTwo').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceTwo.title;
-document.querySelector('.serviceThree').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceThree.title;
-document.querySelector('.serviceFour').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceFour.title;
-document.querySelector('.serviceFive').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceFive.title;
-document.querySelector('.serviceSix').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceSix.title;
-document.querySelector('.serviceSeven').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceSeven.title;
-document.querySelector('.serviceEight').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceEight.title;
+document.querySelector('.serviceOne').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.title;
+document.querySelector('.serviceTwo').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceTwo.title;
+document.querySelector('.serviceThree').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceThree.title;
+document.querySelector('.serviceFour').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFour.title;
+document.querySelector('.serviceFive').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFive.title;
+document.querySelector('.serviceSix').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSix.title;
+document.querySelector('.serviceSeven').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSeven.title;
+document.querySelector('.serviceEight').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceEight.title;
 
 const nextSlide = () => {
     //get current class from current selected element
@@ -130,9 +134,9 @@ let calculatorTotal = document.querySelector('.calculatorTotal');
 
 // get info card data
 let cardData = document.querySelector('.servicesInformation');
-cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceOne.icon
-cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceOne.title;
-cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceOne.body;
+cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceOne.icon
+cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.title;
+cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.body;
 
 serviceOneEv.addEventListener('click', e =>{
     serviceOneEv.classList.add('serviceShadow');
@@ -144,9 +148,9 @@ serviceOneEv.addEventListener('click', e =>{
     serviceSevenEv.classList.remove('serviceShadow');
     serviceEightEv.classList.remove('serviceShadow');
     cardData.style.borderRadius = '0px 20px 20px 20px';
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceOne.icon
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceOne.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceOne.body;
+    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceOne.icon
+    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.title;
+    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.body;
     
 });
 
@@ -160,9 +164,9 @@ serviceTwoEv.addEventListener('click', e =>{
     serviceSevenEv.classList.remove('serviceShadow');
     serviceEightEv.classList.remove('serviceShadow');
     cardData.style.borderRadius = '20px 20px 20px 20px';
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceTwo.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceTwo.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceTwo.body;
+    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceTwo.icon;
+    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceTwo.title;
+    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceTwo.body;
     
 });
 
@@ -176,9 +180,9 @@ serviceThreeEv.addEventListener('click', e =>{
     serviceSevenEv.classList.remove('serviceShadow');
     serviceEightEv.classList.remove('serviceShadow');
     cardData.style.borderRadius = '20px 20px 20px 20px';
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceThree.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceThree.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceThree.body;
+    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceThree.icon;
+    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceThree.title;
+    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceThree.body;
     
 });
 serviceFourEv.addEventListener('click', e =>{
@@ -191,9 +195,9 @@ serviceFourEv.addEventListener('click', e =>{
     serviceSevenEv.classList.remove('serviceShadow');
     serviceEightEv.classList.remove('serviceShadow');
     cardData.style.borderRadius = '20px 20px 20px 20px';
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceFour.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceFour.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceFour.body;
+    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceFour.icon;
+    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFour.title;
+    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFour.body;
     
 });
 serviceFiveEv.addEventListener('click', e =>{
@@ -206,9 +210,9 @@ serviceFiveEv.addEventListener('click', e =>{
     serviceSevenEv.classList.remove('serviceShadow');
     serviceEightEv.classList.remove('serviceShadow');
     cardData.style.borderRadius = '20px 20px 20px 20px';
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceFive.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceFive.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceFive.body;
+    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceFive.icon;
+    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFive.title;
+    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFive.body;
     
 });
 serviceSixEv.addEventListener('click', e =>{
@@ -221,9 +225,9 @@ serviceSixEv.addEventListener('click', e =>{
     serviceSevenEv.classList.remove('serviceShadow');
     serviceEightEv.classList.remove('serviceShadow');
     cardData.style.borderRadius = '20px 20px 20px 20px';
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceSix.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceSix.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceSix.body;
+    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceSix.icon;
+    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSix.title;
+    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSix.body;
     
 });
 serviceSevenEv.addEventListener('click', e =>{
@@ -236,9 +240,9 @@ serviceSevenEv.addEventListener('click', e =>{
     serviceSevenEv.classList.add('serviceShadow');
     serviceEightEv.classList.remove('serviceShadow');
     cardData.style.borderRadius = '20px 20px 20px 20px';
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceSeven.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceSeven.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceSeven.body;
+    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceSeven.icon;
+    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSeven.title;
+    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSeven.body;
     
 });
 serviceEightEv.addEventListener('click', e =>{
@@ -251,9 +255,9 @@ serviceEightEv.addEventListener('click', e =>{
     serviceSevenEv.classList.remove('serviceShadow');
     serviceEightEv.classList.add('serviceShadow');
     cardData.style.borderRadius = '20px 20px 20px 0px';
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].ro.Services.ServiceList.ServiceEight.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceEight.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].ro.Services.ServiceList.ServiceEight.body;
+    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceEight.icon;
+    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceEight.title;
+    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceEight.body;
     
 });
 

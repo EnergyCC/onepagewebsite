@@ -1,7 +1,7 @@
 export default{
     "Language":[
-        {
-            "ro":{
+        
+            {
                 "Navigation":{
                     "Home": "ACASA",
                     "Services": "SERVICII",
@@ -67,6 +67,6 @@ export default{
                     }
                 }
             }
-        }
+        
     ]
 }
