@@ -512,11 +512,13 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
+    overflow: hidden;
     width: 100%;
     /* justify-content: center; */
   }
   .servicesInformation {
     width: 100%;
+    overflow: hidden;
   }
 }
 
