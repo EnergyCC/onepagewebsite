@@ -8,14 +8,14 @@ let slideInterval;
 
 let language;
 
-language = 1;
+language = 0;
 
 // web content from json object
 // Navigation
-document.querySelector('.homeLink').innerHTML = jsonData.Language[0].Navigation.Home;
-document.querySelector('.servicesLink').innerHTML = jsonData.Language[0].Navigation.Services;
-document.querySelector('.galleryLink').innerHTML = jsonData.Language[0].Navigation.Gallery;
-document.querySelector('.contactLink').innerHTML = jsonData.Language[0].Navigation.Contact;
+document.querySelector('.homeLink').innerHTML = jsonData.Language[language].Navigation.Home;
+document.querySelector('.servicesLink').innerHTML = jsonData.Language[language].Navigation.Services;
+document.querySelector('.galleryLink').innerHTML = jsonData.Language[language].Navigation.Gallery;
+document.querySelector('.contactLink').innerHTML = jsonData.Language[language].Navigation.Contact;
 // landing page
 document.querySelector('#slideOne').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Landing.SlideOne[0];
 document.querySelector('#slideTwo').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Landing.SlideTwo[0];
