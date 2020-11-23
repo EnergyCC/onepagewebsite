@@ -161,7 +161,10 @@ a {
   font-weight: 900;
   text-align: center;
   transform: translateX(50%);
-  color: #333;
+  color: #ff523b;
+}
+.scrollText a {
+  color: #ff523b;
 }
 .scrollText::after {
   content: "\f078";
@@ -319,33 +322,30 @@ a {
   text-align: justify;
 }
 
-.calculatorP {
-  padding: 30px 0px;
+.calculatorSpan {
   display: flex;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   margin-top: auto;
 }
-
-.calculatorT {
-  margin: 0px 10px;
+.calculatorSpan p {
+  padding: 0 20px;
 }
-
-.calculatorInput {
+.calculatorSpan input[type="text"] {
   background: transparent;
   border: none;
   border-bottom: 0.5px solid #fff;
   color: #fff;
-  margin: 0px 20px;
+  font-size: 16px;
+  text-align: center;
 }
 
-.calculatorInput:focus {
-  border-bottom: 1px solid #fff;
+.calcResult {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
 }
-
-.resultP {
-  margin: 0px 10px;
+.calcResult p {
+  padding: 0 20px;
 }
 
 .servicesIcon {
@@ -472,6 +472,12 @@ a {
   .navigation li i {
     display: initial;
   }
+  .servicesCard {
+    width: 30%;
+  }
+  .servicesInformation {
+    width: 70%;
+  }
 }
 
 @media (max-width: 550px) {
@@ -485,6 +491,32 @@ a {
   }
   .scrollText {
     display: none;
+  }
+  .serviceFlex {
+    flex-direction: column;
+  }
+  .servicesCard span {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    /* padding: 5px; */
+  }
+  .serviceShadow {
+    border-radius: 20px;
+    /* background-color: transparent; */
+  }
+  .servicesIcon {
+    width: 24px;
+  }
+  .servicesCard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    width: 100%;
+    /* justify-content: center; */
+  }
+  .servicesInformation {
+    width: 100%;
   }
 }
 
