@@ -210,14 +210,13 @@ a {
   font-size: 3rem;
   font-weight: bold;
 }
-.serviceTitle h1::after {
-  content: "";
+.serviceTitle span {
   background: #ff523b;
   width: 130px;
   height: 5px;
   border-radius: 5px;
   position: absolute;
-  bottom: -150px;
+  margin-top: 80px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -360,6 +359,31 @@ a {
 }
 
 /* End services styling */
+
+/* Start of gallery */
+.galleryTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.galleryTitle h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.galleryTitle span {
+  background: #ff523b;
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  margin-top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* End of gallery */
 
 /* Scroll back to top */
 

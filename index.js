@@ -45,6 +45,10 @@ document.querySelector('.serviceSix').getElementsByTagName('p')[0].innerHTML = j
 document.querySelector('.serviceSeven').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSeven.title;
 document.querySelector('.serviceEight').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceEight.title;
 
+document.querySelector('.galleryTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Gallery.Title;
+
+
+
 const nextSlide = () => {
     //get current class from current selected element
     const current = document.querySelector('.current');

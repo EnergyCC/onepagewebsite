@@ -65,6 +65,9 @@ export default{
                             "rate": 5
                         }
                     }
+                },
+                "Gallery":{
+                    "Title": "Galerie"
                 }
             }
         
