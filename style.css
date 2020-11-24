@@ -520,6 +520,16 @@ a {
     width: 100%;
     overflow: hidden;
   }
+  .serviceHighlighted {
+    border-radius: 0px;
+  }
+  .topBtn button {
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    margin: 5px;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 @media (max-width: 400px) {
