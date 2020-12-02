@@ -1,564 +1,678 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  color: #333;
-  line-height: 1.6;
-  /* background-color: rgb(219, 219, 219); */
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    /* background-color: rgb(219, 219, 219); */
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 a {
-  text-decoration: none;
-  color: #333;
+    text-decoration: none;
+    color: #333;
 }
+
 
 /* Navigation styling */
 
 .navigation {
-  height: 10vh;
-  max-width: 80%;
-  margin: 0 auto;
-  overflow: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: rgb(219, 219, 219); */
+    height: 10vh;
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(219, 219, 219); */
 }
 
 .navigation ul {
-  display: flex;
+    display: flex;
 }
 
 .navigation h1 {
-  font-size: 3rem;
-  font-weight: 800;
+    font-size: 3rem;
+    font-weight: 800;
 }
 
 .navigation a {
-  padding: 10px;
-  margin: 0 5px;
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 1px;
+    padding: 10px;
+    margin: 0 5px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .navigation a:hover {
-  border-bottom: 2px #047aed solid;
+    border-bottom: 2px #047aed solid;
 }
 
+
 /* end navigation styling */
+
 
 /* utility clases */
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px 50px;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 50px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
+
 /* End utility classes */
+
 
 /* Styling for slide show images */
 
 .slider {
-  position: relative;
-  overflow: hidden;
-  height: 90vh;
-  width: 100%;
-  /* box-shadow: 0px 15px 15px; */
+    position: relative;
+    overflow: hidden;
+    height: 90vh;
+    width: 100%;
+    /* box-shadow: 0px 15px 15px; */
 }
 
 .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
 }
 
 .slide.current {
-  opacity: 1;
+    opacity: 1;
 }
 
+
 /* end styling for slide show images */
+
 
 /* Slide text card style */
 
 .slide .content {
-  position: absolute;
-  bottom: 100px;
-  left: -600px;
-  width: 600px;
-  background-color: rgba(201, 201, 201, 0.7);
-  padding: 35px;
+    position: absolute;
+    bottom: 100px;
+    left: -600px;
+    width: 600px;
+    background-color: rgba(201, 201, 201, 0.7);
+    padding: 35px;
 }
 
 .slide .content h1 {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .slide.current .content {
-  opacity: 1;
-  transform: translateX(600px);
-  transition: all 0.7s ease-in-out 0.3s;
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
 }
 
+
 /* End slide text cards style */
+
 
 /* button style for sliders */
 
 .buttons button#next {
-  position: absolute;
-  top: 50%;
-  right: 15px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
 }
 
 .buttons button#prev {
-  position: absolute;
-  top: 50%;
-  left: 15px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
 }
 
 .buttons button {
-  border: 2px solid #fff;
-  background-color: transparent;
-  color: #fff;
-  cursor: pointer;
-  padding: 13px 15px;
-  border-radius: 50%;
-  outline: none;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    outline: none;
 }
 
 .buttons button:hover {
-  background-color: #fff;
-  color: #333;
+    background-color: #fff;
+    color: #333;
 }
+
 
 /* end button style for sliders */
 
+
 /* scroll down text */
+
 .scrollText {
-  position: absolute;
-  bottom: 2.5%;
-  right: 50%;
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  transform: translateX(50%);
-  color: #ff523b;
+    position: absolute;
+    bottom: 2.5%;
+    right: 50%;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    transform: translateX(50%);
+    color: #ff523b;
 }
+
 .scrollText a {
-  color: #ff523b;
+    color: #ff523b;
 }
+
 .scrollText::after {
-  content: "\f078";
-  font-family: "Font Awesome 5 Free";
-  display: block;
-  margin-top: -15px;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 900;
+    content: "\f078";
+    font-family: "Font Awesome 5 Free";
+    display: block;
+    margin-top: -15px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
 }
+
 
 /* Bg images */
 
 .slide:first-child {
-  background: url("./images/IMG_construction.jpg") no-repeat center center/cover;
+    background: url("./images/IMG_construction.jpg") no-repeat center center/cover;
 }
 
 .slide:nth-child(2) {
-  background: url("./images/IMG_furniture.jpg") no-repeat center center/cover;
+    background: url("./images/IMG_furniture.jpg") no-repeat center center/cover;
 }
 
 .slide:nth-child(3) {
-  background: url("./images/IMG_painting.jpg") no-repeat center center/cover;
+    background: url("./images/IMG_painting.jpg") no-repeat center center/cover;
 }
+
 
 /* services section */
 
 .services {
-  background-color: #4c4845;
-  color: #fff;
-  padding-bottom: 100px;
-  box-shadow: 0px 15px 15px inset #333, 0px -15px 15px inset #333;
+    background-color: #4c4845;
+    color: #fff;
+    padding-bottom: 100px;
+    box-shadow: 0px 15px 15px inset #333, 0px -15px 15px inset #333;
 }
 
 .services .serviceTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
 
 .services .serviceTitle h1 {
-  font-size: 3rem;
-  font-weight: bold;
+    font-size: 3rem;
+    font-weight: bold;
 }
+
 .serviceTitle span {
-  background: #ff523b;
-  width: 130px;
-  height: 5px;
-  border-radius: 5px;
-  position: absolute;
-  margin-top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
+    background: #ff523b;
+    width: 130px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .serviceFlex {
-  display: flex;
-  justify-content: center;
-  padding: 30px 0px;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
 }
 
 .servicesCard {
-  width: 20%;
+    width: 20%;
 }
 
 .servicesCard span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
 }
 
 .servicesCard p {
-  margin: 0px 20px;
+    margin: 0px 20px;
 }
 
 .serviceHighlighted {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 0px 20px 20px 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0px 20px 20px 20px;
 }
 
 .serviceOne:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .serviceTwo:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .serviceThree:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .serviceFour:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .serviceFive:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .serviceSix:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .serviceSeven:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .serviceEight:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .servicesInformation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-  /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    /* background-color: yellow; */
 }
 
 .servicesInformation img {
-  max-width: 100%;
-  margin: 10px;
-  padding-top: 20px;
-  filter: invert(90%);
+    max-width: 100%;
+    margin: 10px;
+    padding-top: 20px;
+    filter: invert(90%);
 }
 
 .servicesInformation h1 {
-  padding: 20px 0px;
+    padding: 20px 0px;
 }
 
 .informationContext {
-  width: 80%;
-  line-height: 2.5rem;
-  padding: 0px 0px 20px 0px;
-  text-align: justify;
+    width: 80%;
+    line-height: 2.5rem;
+    padding: 0px 0px 20px 0px;
+    text-align: justify;
 }
 
 .calculatorSpan {
-  display: flex;
-  justify-content: space-between;
-  margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
 }
+
 .calculatorSpan p {
-  padding: 0 20px;
+    padding: 0 20px;
 }
+
 .calculatorSpan input[type="text"] {
-  background: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  color: #fff;
-  font-size: 16px;
-  text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
 }
 
 .calcResult {
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
 }
+
 .calcResult p {
-  padding: 0 20px;
+    padding: 0 20px;
 }
 
 .servicesIcon {
-  max-width: 100%;
-  width: 32px;
-  filter: invert(90%);
+    max-width: 100%;
+    width: 32px;
+    filter: invert(90%);
 }
 
 .serviceShadow {
-  border-radius: 20px 0 0 20px;
-  background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px 0 0 20px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
+
 
 /* End services styling */
 
+
 /* Start of gallery */
+
 .galleryTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
 
 .galleryTitle h1 {
-  font-size: 3rem;
-  font-weight: bold;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .galleryTitle span {
-  background: #ff523b;
-  width: 100px;
-  height: 5px;
-  position: absolute;
-  margin-top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
+    background: #ff523b;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    margin-top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+.galleryContent {
+    width: 100%;
+    /* background-color: #aaa; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.galleryStripBefore {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 10%;
+    right: 5%;
+}
+
+.galleryStripBefore p {
+    /* background-color: orangered; */
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 900;
+    border-bottom: 6px solid #666;
+}
+
+.galleryImage {
+    position: relative;
+    width: 60%;
+}
+
+.galleryImage img {
+    max-width: 100%;
+}
+
+.galleryStripAfter {
+    position: relative;
+    /* background-color: #aaa; */
+    flex-direction: column;
+    width: 10%;
+    left: 5%;
+}
+
+.galleryStripAfter p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    border-bottom: 6px solid #666;
+}
+
+.galleryHighlight:hover {
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    cursor: pointer;
+}
+
+
 /* End of gallery */
+
+
+/* Start of Contact */
+
+.contact {
+    background-color: #4c4845;
+    color: #fff;
+    box-shadow: 0px 15px 15px inset #333, 0px -15px 15px inset #333;
+}
+
+.contactTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.contactTitle h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.contactTitle span {
+    background: #ff523b;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    margin-top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* End of contact */
+
 
 /* Scroll back to top */
 
 .visibleBtn {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .topBtn button {
-  font-size: 2rem;
-  border: 2px solid #333;
-  background-color: #fff;
-  padding: 1rem;
-  margin: 1rem;
-  border-radius: 10%;
-  position: fixed;
-  bottom: 15px;
-  right: 20px;
+    font-size: 2rem;
+    border: 2px solid #333;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10%;
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
 }
 
 .topBtn button:hover {
-  border: 2px solid #fff;
-  background-color: #0478ed88;
-  color: #fff;
+    border: 2px solid #fff;
+    background-color: #0478ed88;
+    color: #fff;
 }
 
+
 /* end of scroll button */
+
 
 /* the section between slides i guess /shrug */
 
 .betweenPages {
-  height: 100px;
-  /* box-shadow: 0px -15px 15px; */
-  background-color: rgb(216, 216, 216);
+    height: 100px;
+    /* box-shadow: 0px -15px 15px; */
+    background-color: rgb(134, 134, 134);
 }
 
+
 /* end of the section between slides */
+
 
 /* media query for smaller screens */
 
 @media (max-width: 800px) {
-  .navigation h1 {
-    display: none;
-  }
-  .navigation {
-    max-width: 100%;
-    justify-content: center;
-  }
-  nav {
-    width: 90%;
-  }
-  .navigation ul {
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-  }
-  .navigation li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: rgb(117, 117, 117);
-    font-size: 25px;
-  }
-  .navigation a {
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
-    justify-content: center;
-    letter-spacing: 0px;
-    /* padding-top: 5px; */
-    color: rgb(117, 117, 117);
-  }
-
-  .homeLink::before {
-    content: "\f015";
-    font-family: "Font Awesome 5 Free";
-    display: block;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-  }
-
-  .servicesLink::before {
-    content: "\f0ad";
-    font-family: "Font Awesome 5 Free";
-    display: block;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-  }
-
-  .galleryLink::before {
-    content: "\f03e";
-    font-family: "Font Awesome 5 Free";
-    display: block;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-  }
-
-  .contactLink::before {
-    content: "\f3e0";
-    font-family: "Font Awesome 5 Free";
-    display: block;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-  }
-
-  .navigation li i {
-    display: initial;
-  }
-  .servicesCard {
-    width: 30%;
-  }
-  .servicesInformation {
-    width: 70%;
-  }
+    .navigation h1 {
+        display: none;
+    }
+    .navigation {
+        max-width: 100%;
+        justify-content: center;
+    }
+    nav {
+        width: 90%;
+    }
+    .navigation ul {
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+    }
+    .navigation li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgb(117, 117, 117);
+        font-size: 25px;
+    }
+    .navigation a {
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        justify-content: center;
+        letter-spacing: 0px;
+        /* padding-top: 5px; */
+        color: rgb(117, 117, 117);
+    }
+    .homeLink::before {
+        content: "\f015";
+        font-family: "Font Awesome 5 Free";
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .servicesLink::before {
+        content: "\f0ad";
+        font-family: "Font Awesome 5 Free";
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .galleryLink::before {
+        content: "\f03e";
+        font-family: "Font Awesome 5 Free";
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .contactLink::before {
+        content: "\f3e0";
+        font-family: "Font Awesome 5 Free";
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .navigation li i {
+        display: initial;
+    }
+    .servicesCard {
+        width: 30%;
+    }
+    .servicesInformation {
+        width: 70%;
+    }
 }
 
 @media (max-width: 550px) {
-  .slide .content {
-    bottom: -300px;
-    left: 0;
-    width: 100%;
-  }
-  .slide.current .content {
-    transform: translateY(-300px);
-  }
-  .scrollText {
-    display: none;
-  }
-  .serviceFlex {
-    flex-direction: column;
-  }
-  .servicesCard span {
-    display: block;
-    text-align: center;
-    font-size: 10px;
-    /* padding: 5px; */
-  }
-  .serviceShadow {
-    border-radius: 20px;
-    /* background-color: transparent; */
-  }
-  .servicesIcon {
-    width: 24px;
-  }
-  .servicesCard {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    overflow: hidden;
-    width: 100%;
-    /* justify-content: center; */
-  }
-  .servicesInformation {
-    width: 100%;
-    overflow: hidden;
-  }
-  .serviceHighlighted {
-    border-radius: 0px;
-  }
-  .topBtn button {
-    background-color: rgba(255, 255, 255, 0.2);
-    overflow: hidden;
-    margin: 5px;
-    bottom: 0;
-    right: 0;
-  }
+    .slide .content {
+        bottom: -300px;
+        left: 0;
+        width: 100%;
+    }
+    .slide.current .content {
+        transform: translateY(-300px);
+    }
+    .scrollText {
+        display: none;
+    }
+    .serviceFlex {
+        flex-direction: column;
+    }
+    .servicesCard span {
+        display: block;
+        text-align: center;
+        font-size: 10px;
+        /* padding: 5px; */
+    }
+    .serviceShadow {
+        border-radius: 20px;
+        /* background-color: transparent; */
+    }
+    .servicesIcon {
+        width: 24px;
+    }
+    .servicesCard {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        overflow: hidden;
+        width: 100%;
+        /* justify-content: center; */
+    }
+    .servicesInformation {
+        width: 100%;
+        overflow: hidden;
+    }
+    .serviceHighlighted {
+        border-radius: 0px;
+    }
+    .topBtn button {
+        background-color: rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+        margin: 5px;
+        bottom: 0;
+        right: 0;
+    }
 }
 
 @media (max-width: 400px) {
-  .services .serviceTitle h1 {
-    font-size: 2rem;
-    font-weight: bold;
-  }
+    .services .serviceTitle h1 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
 }
