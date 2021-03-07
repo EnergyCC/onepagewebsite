@@ -54,8 +54,7 @@ document.querySelector('.serviceSeven').getElementsByTagName('p')[0].innerHTML =
 document.querySelector('.serviceEight').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceEight.title;
 
 document.querySelector('.galleryTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Gallery.Title;
-let galleryInnerIMG = document.querySelector('.galleryInnerImage');
-galleryInnerIMG.src = jsonData.Language[0].Gallery.Images.Before[0];
+
 
 document.querySelector('.contactTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Contact.Title;
 
@@ -188,38 +187,38 @@ for (let i = 0; i < serviceArray.length; i++) {
 }
 
 
-let beforeDiv = document.querySelector('.galleryStripBefore');
-let afterDiv = document.querySelector('.galleryStripAfter');
+// let beforeDiv = document.querySelector('.galleryStripBefore');
+// let afterDiv = document.querySelector('.galleryStripAfter');
 
-for (let i = 0; i < jsonData.Language[0].Gallery.Images.Before.length; i++) {
-    let beforeThumbnail = document.createElement('div');
-    let thumbnailImage = document.createElement('img');
-    thumbnailImage.src = jsonData.Language[0].Gallery.Images.Before[i];
-    beforeThumbnail.style.width = '100%';
-    thumbnailImage.style.display = 'block';
-    thumbnailImage.style.width = '100%';
-    beforeThumbnail.style.padding = '5px';
-    // thumbnailImage.style.borderBottom = 'solid 3px #666';
-    beforeDiv.appendChild(beforeThumbnail);
-    beforeThumbnail.appendChild(thumbnailImage);
-    beforeThumbnail.classList.add('galleryHighlight');
-    thumbnailImage.addEventListener('click', e => {
-        galleryInnerIMG.src = jsonData.Language[0].Gallery.Images.Before[i];
-    })
-}
+// for (let i = 0; i < jsonData.Language[0].Gallery.Images.Before.length; i++) {
+//     let beforeThumbnail = document.createElement('div');
+//     let thumbnailImage = document.createElement('img');
+//     thumbnailImage.src = jsonData.Language[0].Gallery.Images.Before[i];
+//     beforeThumbnail.style.width = '100%';
+//     thumbnailImage.style.display = 'block';
+//     thumbnailImage.style.width = '100%';
+//     beforeThumbnail.style.padding = '5px';
+//     // thumbnailImage.style.borderBottom = 'solid 3px #666';
+//     beforeDiv.appendChild(beforeThumbnail);
+//     beforeThumbnail.appendChild(thumbnailImage);
+//     beforeThumbnail.classList.add('galleryHighlight');
+//     thumbnailImage.addEventListener('click', e => {
+//         galleryInnerIMG.src = jsonData.Language[0].Gallery.Images.Before[i];
+//     })
+// }
 
 
-for (let i = 0; i < jsonData.Language[0].Gallery.Images.After.length; i++) {
-    let beforeThumbnail = document.createElement('div');
-    let thumbnailImage = document.createElement('img');
-    thumbnailImage.src = jsonData.Language[0].Gallery.Images.After[i];
-    beforeThumbnail.style.width = '100%';
-    thumbnailImage.style.width = '100%';
-    thumbnailImage.style.padding = '5px';
-    afterDiv.appendChild(beforeThumbnail);
-    beforeThumbnail.appendChild(thumbnailImage);
-    thumbnailImage.classList.add('galleryHighlight');
-    thumbnailImage.addEventListener('click', e => {
-        galleryInnerIMG.src = jsonData.Language[0].Gallery.Images.After[i];
-    })
-}
+// for (let i = 0; i < jsonData.Language[0].Gallery.Images.After.length; i++) {
+//     let beforeThumbnail = document.createElement('div');
+//     let thumbnailImage = document.createElement('img');
+//     thumbnailImage.src = jsonData.Language[0].Gallery.Images.After[i];
+//     beforeThumbnail.style.width = '100%';
+//     thumbnailImage.style.width = '100%';
+//     thumbnailImage.style.padding = '5px';
+//     afterDiv.appendChild(beforeThumbnail);
+//     beforeThumbnail.appendChild(thumbnailImage);
+//     thumbnailImage.classList.add('galleryHighlight');
+//     thumbnailImage.addEventListener('click', e => {
+//         galleryInnerIMG.src = jsonData.Language[0].Gallery.Images.After[i];
+//     })
+// }
