@@ -150,150 +150,42 @@ let calculatorCont = document.querySelector('.calculatorContent');
 let calcInput = document.querySelector('.calculatorInput');
 let calculatorTotal = document.querySelector('.calculatorTotal');
 
+
+
 // get info card data
 let cardData = document.querySelector('.servicesInformation');
 cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceOne.icon
 cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.title;
 cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.body;
 
-serviceOneEv.addEventListener('click', e => {
-    serviceOneEv.classList.add('serviceShadow');
-    serviceTwoEv.classList.remove('serviceShadow');
-    serviceThreeEv.classList.remove('serviceShadow');
-    serviceFourEv.classList.remove('serviceShadow');
-    serviceFiveEv.classList.remove('serviceShadow');
-    serviceSixEv.classList.remove('serviceShadow');
-    serviceSevenEv.classList.remove('serviceShadow');
-    serviceEightEv.classList.remove('serviceShadow');
-    if (screen.width > 550) {
-        cardData.style.borderRadius = '0px 20px 20px 20px';
+//function to add event listener for clicks to change the shadow of the 
+let cardDataArray = [jsonData.Language[0].Services.ServiceList.ServiceOne, jsonData.Language[0].Services.ServiceList.ServiceTwo, jsonData.Language[0].Services.ServiceList.ServiceThree, jsonData.Language[0].Services.ServiceList.ServiceFour, jsonData.Language[0].Services.ServiceList.ServiceFive, jsonData.Language[0].Services.ServiceList.ServiceSix, jsonData.Language[0].Services.ServiceList.ServiceSeven, jsonData.Language[0].Services.ServiceList.ServiceEight];
+let serviceArray = [serviceOneEv, serviceTwoEv, serviceThreeEv, serviceFourEv, serviceFiveEv, serviceSixEv, serviceSevenEv, serviceEightEv];
+
+
+function addingEventListenerToServ(indexOfservice) {
+    for (let i = 0; i < serviceArray.length; i++) {
+        serviceArray[indexOfservice].addEventListener('click',
+            e => {
+                serviceArray[i].classList.remove('serviceShadow');
+                serviceArray[indexOfservice].classList.add('serviceShadow');
+                if (screen.width > 550 && indexOfservice === 0) {
+                    cardData.style.borderRadius = '0px 20px 20px 20px';
+                } else if (screen.width > 550 && indexOfservice === 7) {
+                    cardData.style.borderRadius = '20px 20px 20px 0px';
+                } else if (screen.width > 550) {
+                    cardData.style.borderRadius = '20px 20px 20px 20px';
+                }
+                cardData.getElementsByTagName('img')[0].src = cardDataArray[indexOfservice].icon;
+                cardData.getElementsByTagName('h1')[0].innerHTML = cardDataArray[indexOfservice].title;
+                cardData.getElementsByTagName('p')[0].innerHTML = cardDataArray[indexOfservice].body;
+            })
     }
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceOne.icon
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.body;
+}
 
-});
-
-serviceTwoEv.addEventListener('click', e => {
-    serviceOneEv.classList.remove('serviceShadow');
-    serviceTwoEv.classList.add('serviceShadow');
-    serviceThreeEv.classList.remove('serviceShadow');
-    serviceFourEv.classList.remove('serviceShadow');
-    serviceFiveEv.classList.remove('serviceShadow');
-    serviceSixEv.classList.remove('serviceShadow');
-    serviceSevenEv.classList.remove('serviceShadow');
-    serviceEightEv.classList.remove('serviceShadow');
-    if (screen.width > 550) {
-        cardData.style.borderRadius = '20px 20px 20px 20px';
-    }
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceTwo.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceTwo.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceTwo.body;
-
-});
-
-serviceThreeEv.addEventListener('click', e => {
-    serviceOneEv.classList.remove('serviceShadow');
-    serviceTwoEv.classList.remove('serviceShadow');
-    serviceThreeEv.classList.add('serviceShadow');
-    serviceFourEv.classList.remove('serviceShadow');
-    serviceFiveEv.classList.remove('serviceShadow');
-    serviceSixEv.classList.remove('serviceShadow');
-    serviceSevenEv.classList.remove('serviceShadow');
-    serviceEightEv.classList.remove('serviceShadow');
-    if (screen.width > 550) {
-        cardData.style.borderRadius = '20px 20px 20px 20px';
-    }
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceThree.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceThree.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceThree.body;
-
-});
-serviceFourEv.addEventListener('click', e => {
-    serviceOneEv.classList.remove('serviceShadow');
-    serviceTwoEv.classList.remove('serviceShadow');
-    serviceThreeEv.classList.remove('serviceShadow');
-    serviceFourEv.classList.add('serviceShadow');
-    serviceFiveEv.classList.remove('serviceShadow');
-    serviceSixEv.classList.remove('serviceShadow');
-    serviceSevenEv.classList.remove('serviceShadow');
-    serviceEightEv.classList.remove('serviceShadow');
-    if (screen.width > 550) {
-        cardData.style.borderRadius = '20px 20px 20px 20px';
-    }
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceFour.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFour.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFour.body;
-
-});
-serviceFiveEv.addEventListener('click', e => {
-    serviceOneEv.classList.remove('serviceShadow');
-    serviceTwoEv.classList.remove('serviceShadow');
-    serviceThreeEv.classList.remove('serviceShadow');
-    serviceFourEv.classList.remove('serviceShadow');
-    serviceFiveEv.classList.add('serviceShadow');
-    serviceSixEv.classList.remove('serviceShadow');
-    serviceSevenEv.classList.remove('serviceShadow');
-    serviceEightEv.classList.remove('serviceShadow');
-    if (screen.width > 550) {
-        cardData.style.borderRadius = '20px 20px 20px 20px';
-    }
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceFive.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFive.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFive.body;
-
-});
-serviceSixEv.addEventListener('click', e => {
-    serviceOneEv.classList.remove('serviceShadow');
-    serviceTwoEv.classList.remove('serviceShadow');
-    serviceThreeEv.classList.remove('serviceShadow');
-    serviceFourEv.classList.remove('serviceShadow');
-    serviceFiveEv.classList.remove('serviceShadow');
-    serviceSixEv.classList.add('serviceShadow');
-    serviceSevenEv.classList.remove('serviceShadow');
-    serviceEightEv.classList.remove('serviceShadow');
-    if (screen.witdh > 550) {
-        cardData.style.borderRadius = '20px 20px 20px 20px';
-    }
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceSix.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSix.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSix.body;
-
-});
-serviceSevenEv.addEventListener('click', e => {
-    serviceOneEv.classList.remove('serviceShadow');
-    serviceTwoEv.classList.remove('serviceShadow');
-    serviceThreeEv.classList.remove('serviceShadow');
-    serviceFourEv.classList.remove('serviceShadow');
-    serviceFiveEv.classList.remove('serviceShadow');
-    serviceSixEv.classList.remove('serviceShadow');
-    serviceSevenEv.classList.add('serviceShadow');
-    serviceEightEv.classList.remove('serviceShadow');
-    if (screen.width > 550) {
-        cardData.style.borderRadius = '20px 20px 20px 20px';
-    }
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceSeven.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSeven.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSeven.body;
-
-});
-serviceEightEv.addEventListener('click', e => {
-    serviceOneEv.classList.remove('serviceShadow');
-    serviceTwoEv.classList.remove('serviceShadow');
-    serviceThreeEv.classList.remove('serviceShadow');
-    serviceFourEv.classList.remove('serviceShadow');
-    serviceFiveEv.classList.remove('serviceShadow');
-    serviceSixEv.classList.remove('serviceShadow');
-    serviceSevenEv.classList.remove('serviceShadow');
-    serviceEightEv.classList.add('serviceShadow');
-    if (screen.width > 550) {
-        cardData.style.borderRadius = '20px 20px 20px 0px';
-    }
-    cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceEight.icon;
-    cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceEight.title;
-    cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceEight.body;
-
-});
+for (let i = 0; i < serviceArray.length; i++) {
+    addingEventListenerToServ(i);
+}
 
 
 let beforeDiv = document.querySelector('.galleryStripBefore');
