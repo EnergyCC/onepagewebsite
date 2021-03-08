@@ -187,38 +187,17 @@ for (let i = 0; i < serviceArray.length; i++) {
 }
 
 
-// let beforeDiv = document.querySelector('.galleryStripBefore');
-// let afterDiv = document.querySelector('.galleryStripAfter');
+//gallery content
 
-// for (let i = 0; i < jsonData.Language[0].Gallery.Images.Before.length; i++) {
-//     let beforeThumbnail = document.createElement('div');
-//     let thumbnailImage = document.createElement('img');
-//     thumbnailImage.src = jsonData.Language[0].Gallery.Images.Before[i];
-//     beforeThumbnail.style.width = '100%';
-//     thumbnailImage.style.display = 'block';
-//     thumbnailImage.style.width = '100%';
-//     beforeThumbnail.style.padding = '5px';
-//     // thumbnailImage.style.borderBottom = 'solid 3px #666';
-//     beforeDiv.appendChild(beforeThumbnail);
-//     beforeThumbnail.appendChild(thumbnailImage);
-//     beforeThumbnail.classList.add('galleryHighlight');
-//     thumbnailImage.addEventListener('click', e => {
-//         galleryInnerIMG.src = jsonData.Language[0].Gallery.Images.Before[i];
-//     })
-// }
+let galleryTabContents = document.querySelector('.galleryBar');
+let galleryTabsArray = jsonData.Language[0].Gallery.Job;
 
-
-// for (let i = 0; i < jsonData.Language[0].Gallery.Images.After.length; i++) {
-//     let beforeThumbnail = document.createElement('div');
-//     let thumbnailImage = document.createElement('img');
-//     thumbnailImage.src = jsonData.Language[0].Gallery.Images.After[i];
-//     beforeThumbnail.style.width = '100%';
-//     thumbnailImage.style.width = '100%';
-//     thumbnailImage.style.padding = '5px';
-//     afterDiv.appendChild(beforeThumbnail);
-//     beforeThumbnail.appendChild(thumbnailImage);
-//     thumbnailImage.classList.add('galleryHighlight');
-//     thumbnailImage.addEventListener('click', e => {
-//         galleryInnerIMG.src = jsonData.Language[0].Gallery.Images.After[i];
-//     })
-// }
+for(let i = 0; i < galleryTabsArray.length; i++){
+    let newDiv = document.createElement('div');
+    newDiv.innerHTML = galleryTabsArray[i].Title;
+    galleryTabContents.appendChild(newDiv);
+    newDiv.classList.add('galleryBarTab');
+    if(i === 0){
+        newDiv.classList.add('galleryBar--active');
+    }
+}

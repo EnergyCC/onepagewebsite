@@ -68,10 +68,18 @@ export default {
             },
             "Gallery": {
                 "Title": "Galerie",
-                "Images": {
-                    "Before": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_5.jpg'],
-                    "After": ['./images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_4.jpg']
-                }
+                "Job": [
+                    {
+                        "Title": "Lucrarea 1",
+                        "Before": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg'],
+                        "After": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg']
+                    },
+                    {
+                        "Title": "Lucrarea 2",
+                        "Before": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg'],
+                        "After": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg']
+                    }
+                ]
             },
             "Contact": {
                 "Title": "Contact"
