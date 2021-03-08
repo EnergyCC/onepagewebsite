@@ -191,6 +191,8 @@ for (let i = 0; i < serviceArray.length; i++) {
 
 let galleryTabContents = document.querySelector('.galleryBar');
 let galleryTabsArray = jsonData.Language[0].Gallery.Job;
+let galleryTabBeforeImg = document.querySelector('.galleryContentBeforeImages');
+let galleryTabAfterImg = document.querySelector('.galleryContentAfterImages');
 
 for(let i = 0; i < galleryTabsArray.length; i++){
     let newDiv = document.createElement('div');
@@ -200,4 +202,26 @@ for(let i = 0; i < galleryTabsArray.length; i++){
     if(i === 0){
         newDiv.classList.add('galleryBar--active');
     }
+    newDiv.addEventListener('click', e =>{
+        // console.log(galleryTabsArray[i].Title);
+        while(galleryTabBeforeImg.lastChild){
+            galleryTabBeforeImg.removeChild(galleryTabBeforeImg.lastChild);
+        }
+        for(let j = 0; j < galleryTabsArray[i].Before.length; j++){
+            console.log(galleryTabsArray[i].Before[j]);
+            let newImageTab = document.createElement('IMG');
+            newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]);
+            galleryTabBeforeImg.appendChild(newImageTab);
+        };
+        while(galleryTabAfterImg.lastChild){
+            galleryTabAfterImg.removeChild(galleryTabAfterImg.lastChild);
+        }
+        for(let k = 0; k < galleryTabsArray[i].After.length; k++){
+            console.log(galleryTabsArray[i].After[k]);
+            let newImageTab = document.createElement('IMG');
+            newImageTab.setAttribute('src', galleryTabsArray[i].After[k]);
+            galleryTabAfterImg.appendChild(newImageTab);
+        }
+    })
 }
+

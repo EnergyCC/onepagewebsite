@@ -442,7 +442,7 @@ a {
   align-items: center;
   background-color: #ddd;
   padding: 0px 15px;
-  max-height: 0px;
+  /* max-height: 0px; */
   overflow: hidden;
   transition: max-height 0.5s;
 }
