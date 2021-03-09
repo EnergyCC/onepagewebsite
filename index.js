@@ -195,6 +195,9 @@ let galleryTabBeforeImg = document.querySelector('.galleryContentBeforeImages');
 let galleryTabAfterImg = document.querySelector('.galleryContentAfterImages');
 let galleryTabArray = [];
 let galleryImageContents = document.querySelector('.galleryImageContent');
+let lightBoxDiv = document.querySelector('.lightbox');
+let lightBoxImage = document.querySelector('.lightboxImage');
+let exitButton = document.querySelector('.exitBtn');
 
 for(let i = 0; i < galleryTabsArray.length; i++){
     let newDiv = document.createElement('div');
@@ -208,7 +211,15 @@ for(let i = 0; i < galleryTabsArray.length; i++){
         for(let j = 0; j < galleryTabsArray[i].Before.length; j++){
             let newImageTab = document.createElement('IMG');
             newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]);
+            newImageTab.style.cursor = 'pointer';
             galleryTabBeforeImg.appendChild(newImageTab);
+            newImageTab.addEventListener('click', e =>{
+                console.log(newImageTab.src);
+                lightBoxDiv.classList.add('lightbox--active');
+                document.body.style.overflow = 'hidden';
+                lightBoxImage.appendChild(newImageTab);
+                
+            })
         };
         for(let j = 0; j < galleryTabsArray[i].After.length; j++){
             let newImageTab = document.createElement('IMG');
@@ -238,6 +249,9 @@ for(let i = 0; i < galleryTabsArray.length; i++){
                 let newImageTab = document.createElement('IMG');
                 newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]);
                 galleryTabBeforeImg.appendChild(newImageTab);
+                newImageTab.addEventListener('click', e =>{
+                    console.log(newImageTab.src);
+                })
             };
             while(galleryTabAfterImg.lastChild){
                 galleryTabAfterImg.removeChild(galleryTabAfterImg.lastChild);
@@ -253,3 +267,8 @@ for(let i = 0; i < galleryTabsArray.length; i++){
     })
 }
 
+
+    exitButton.addEventListener('click', e =>{
+        lightBoxDiv.classList.remove('lightbox--active');
+        document.body.overflow.style = 'scroll';
+    })

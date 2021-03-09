@@ -523,9 +523,67 @@ a {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   /* overflow: hidden; */
-  visibility: hidden;
+  display: none;
 }
 
+.lightbox--active {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.exitBtn {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  font-size: 3rem;
+  filter: invert(100);
+  cursor: pointer;
+}
+
+.prevImage {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 5%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: invert(100);
+  font-size: 3rem;
+}
+.prevImage:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nextImage {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 5%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: invert(100);
+  font-size: 3rem;
+}
+
+.nextImage:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.lightboxImage {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.lightboxImage img {
+  position: relative;
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
 /* End of gallery */
 
 /* Start of Contact */
