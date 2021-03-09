@@ -198,77 +198,111 @@ let galleryImageContents = document.querySelector('.galleryImageContent');
 let lightBoxDiv = document.querySelector('.lightbox');
 let lightBoxImage = document.querySelector('.lightboxImage');
 let exitButton = document.querySelector('.exitBtn');
+let previousGalleryButton = document.querySelector('.prevImage');
+let nextGalleryButton = document.querySelector('.nextImage');
 
-for(let i = 0; i < galleryTabsArray.length; i++){
-    let newDiv = document.createElement('div');
-    newDiv.innerHTML = galleryTabsArray[i].Title;
-    galleryTabContents.appendChild(newDiv);
-    newDiv.classList.add('galleryBarTab');
+for (let i = 0; i < galleryTabsArray.length; i++) {
+    let newDiv = document.createElement('div'); //creates new div
+    newDiv.innerHTML = galleryTabsArray[i].Title; //sets the new div's innerHTML as one of the object titles from the array
+    galleryTabContents.appendChild(newDiv); //appends the new div to the gallery bar which holds all the tabs
+    newDiv.classList.add('galleryBarTab'); //sets a new class to the created div, for css purposes only
 
     // This sets the first element as the default gallery element
-    if(i === 0){
-        newDiv.classList.add('galleryBar--active');
-        for(let j = 0; j < galleryTabsArray[i].Before.length; j++){
-            let newImageTab = document.createElement('IMG');
-            newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]);
-            newImageTab.style.cursor = 'pointer';
-            galleryTabBeforeImg.appendChild(newImageTab);
-            newImageTab.addEventListener('click', e =>{
-                console.log(newImageTab.src);
-                lightBoxDiv.classList.add('lightbox--active');
-                document.body.style.overflow = 'hidden';
-                lightBoxImage.appendChild(newImageTab);
-                
-            })
+    if (i === 0) {
+        newDiv.classList.add('galleryBar--active'); //sets the first tab as the highlighted one
+        for (let j = 0; j < galleryTabsArray[i].Before.length; j++) {
+            let newImageTab = document.createElement('IMG'); //creates a new image element
+            newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]); //sets the source of the new image element as the current index of the array
+            newImageTab.style.cursor = 'pointer'; //css to make the image cursor into a pointer
+            newImageTab.id = j
+            galleryTabBeforeImg.appendChild(newImageTab); //appends the new image element to the before strip 
+            newImageTab.addEventListener('click', e => {
+                let newImageGallery = document.createElement('IMG'); //creates a new image element
+                newImageGallery.setAttribute('src', newImageTab.src); //sets the source of the new element as the current image source
+                newImageGallery.id = j;
+                lightBoxDiv.classList.add('lightbox--active'); //sets the lightbox as active to show on screen
+                document.body.style.overflow = 'hidden'; //removes scroll bar from the body element
+                lightBoxImage.appendChild(newImageGallery); //appends the new image element to the light box div to show on the screen
+                // console.log(newImageGallery);
+            });
         };
-        for(let j = 0; j < galleryTabsArray[i].After.length; j++){
+        for (let j = 0; j < galleryTabsArray[i].After.length; j++) {
             let newImageTab = document.createElement('IMG');
             newImageTab.setAttribute('src', galleryTabsArray[i].After[j]);
+            newImageTab.style.cursor = 'pointer';
             galleryTabAfterImg.appendChild(newImageTab);
+            newImageTab.addEventListener('click', e => {
+                let newImageGallery = document.createElement('IMG');
+                newImageGallery.setAttribute('src', newImageTab.src);
+                lightBoxDiv.classList.add('lightbox--active');
+                document.body.style.overflow = 'hidden';
+                lightBoxImage.appendChild(newImageGallery);
+            });
         }
         galleryImageContents.style.maxHeight = galleryImageContents.scrollHeight + 'px';
     };
-    galleryTabArray.push(galleryTabContents.getElementsByTagName('div')[i]);
-    
+    galleryTabArray.push(galleryTabContents.getElementsByTagName('div')[i]); //pushes the gallery tab divs into a new array
+
 
     // event listener for every gallery element added dynamically
-    newDiv.addEventListener('click', e =>{
-        if(galleryTabContents.getElementsByTagName('div')[i].classList.contains('galleryBar--active')){
+    newDiv.addEventListener('click', e => {
+        if (galleryTabContents.getElementsByTagName('div')[i].classList.contains('galleryBar--active')) {
             return;
-        }else{
-        galleryImageContents.style.maxHeight = '0px';
-        setTimeout(() => {            
-            galleryTabArray.forEach(tabElement => {
-                tabElement.classList.remove('galleryBar--active');
-            });
-            galleryTabContents.getElementsByTagName('div')[i].classList.add('galleryBar--active');
-            while(galleryTabBeforeImg.lastChild){
-                galleryTabBeforeImg.removeChild(galleryTabBeforeImg.lastChild);
-            }
-            for(let j = 0; j < galleryTabsArray[i].Before.length; j++){
-                let newImageTab = document.createElement('IMG');
-                newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]);
-                galleryTabBeforeImg.appendChild(newImageTab);
-                newImageTab.addEventListener('click', e =>{
-                    console.log(newImageTab.src);
-                })
-            };
-            while(galleryTabAfterImg.lastChild){
-                galleryTabAfterImg.removeChild(galleryTabAfterImg.lastChild);
-            }
-            for(let k = 0; k < galleryTabsArray[i].After.length; k++){
-                let newImageTab = document.createElement('IMG');
-                newImageTab.setAttribute('src', galleryTabsArray[i].After[k]);
-                galleryTabAfterImg.appendChild(newImageTab);
-            };
-            galleryImageContents.style.maxHeight = galleryImageContents.scrollHeight + 'px';
-        }, 500);
-    }
+        } else {
+            galleryImageContents.style.maxHeight = '0px';
+            setTimeout(() => {
+                galleryTabArray.forEach(tabElement => {
+                    tabElement.classList.remove('galleryBar--active');
+                });
+                galleryTabContents.getElementsByTagName('div')[i].classList.add('galleryBar--active');
+                while (galleryTabBeforeImg.lastChild) {
+                    galleryTabBeforeImg.removeChild(galleryTabBeforeImg.lastChild);
+                }
+                for (let j = 0; j < galleryTabsArray[i].Before.length; j++) {
+                    let newImageTab = document.createElement('IMG');
+                    newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]);
+                    galleryTabBeforeImg.appendChild(newImageTab);
+                    newImageTab.style.cursor = 'pointer';
+                    newImageTab.addEventListener('click', e => {
+                        let newImageGallery = document.createElement('IMG');
+                        newImageGallery.setAttribute('src', newImageTab.src);
+                        lightBoxDiv.classList.add('lightbox--active');
+                        document.body.style.overflow = 'hidden';
+                        lightBoxImage.appendChild(newImageGallery);
+                    });
+                };
+                while (galleryTabAfterImg.lastChild) {
+                    galleryTabAfterImg.removeChild(galleryTabAfterImg.lastChild);
+                }
+                for (let k = 0; k < galleryTabsArray[i].After.length; k++) {
+                    let newImageTab = document.createElement('IMG');
+                    newImageTab.setAttribute('src', galleryTabsArray[i].After[k]);
+                    galleryTabAfterImg.appendChild(newImageTab);
+                    newImageTab.style.cursor = 'pointer';
+                    newImageTab.addEventListener('click', e => {
+                        let newImageGallery = document.createElement('IMG');
+                        newImageGallery.setAttribute('src', newImageTab.src);
+                        lightBoxDiv.classList.add('lightbox--active');
+                        document.body.style.overflow = 'hidden';
+                        lightBoxImage.appendChild(newImageGallery);
+                    });
+                };
+                galleryImageContents.style.maxHeight = galleryImageContents.scrollHeight + 'px';
+            }, 500);
+        }
     })
 }
 
 
-    exitButton.addEventListener('click', e =>{
-        lightBoxDiv.classList.remove('lightbox--active');
-        document.body.overflow.style = 'scroll';
-    })
+exitButton.addEventListener('click', e => {
+    lightBoxDiv.classList.remove('lightbox--active');
+    document.body.style.overflow = 'auto';
+    // console.log(lightBoxImage.getElementsByTagName('img'));
+    lightBoxImage.removeChild(lightBoxImage.getElementsByTagName('img')[0]);
+});
+
+// previousGalleryButton.addEventListener('click', e => {
+//     let beforePrevArray = galleryTabBeforeImg.getElementsByTagName('img');
+//     beforePrevArray.forEach()
+//     console.log(beforePrevArray)
+// })
