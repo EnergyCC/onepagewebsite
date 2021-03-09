@@ -78,6 +78,11 @@ export default {
                         "Title": "Lucrarea 2",
                         "Before": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg'],
                         "After": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg']
+                    },
+                    {
+                        "Title": "Lucrarea 3",
+                        "Before": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg'],
+                        "After": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg']
                     }
                 ]
             },
