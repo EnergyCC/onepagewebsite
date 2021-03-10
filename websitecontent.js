@@ -9,9 +9,9 @@ export default {
                 "Contact": "CONTACT"
             },
             "Landing": {
-                "SlideOne": ["Slide One", "Slide one content || Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse, earum mollitia temporibus inventore aliquid."],
-                "SlideTwo": ["Slide Two", "Slide two content || Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse, earum mollitia temporibus inventore aliquid."],
-                "SlideThree": ["Slide Three", "Slide three content ||| Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse, earum mollitia temporibus inventore aliquid."]
+                "SlideOne": ["Slide Unu", "Textul care vine pe slide-ul unu || Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse, earum mollitia temporibus inventore aliquid."],
+                "SlideTwo": ["Slide Doi", "Textul care vine pe slide-ul doi || Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse, earum mollitia temporibus inventore aliquid."],
+                "SlideThree": ["Slide Trei", "Textul care vine pe slide-ul trei ||| Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse, earum mollitia temporibus inventore aliquid."]
             },
             "Services": {
                 "ServiceTitle": "Servicii oferite",
@@ -19,49 +19,49 @@ export default {
                     "ServiceOne": {
                         "icon": "./icons/construction-worker.png",
                         "title": "Exemplu 1",
-                        "body": "Body one || Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates accusamus in maiores nobis, assumenda illum dicta voluptate deserunt impedit, aliquid iusto illo ipsum nesciunt repellat doloremque similique libero excepturi debitis cumque nisi ad dolor rem porro. Quibusdam amet exercitationem repellat voluptatem, ullam illum nobis aspernatur distinctio, omnis incidunt voluptas neque!",
+                        "body": "Textul care contine informatii despre exemplul 1 || Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates accusamus in maiores nobis, assumenda illum dicta voluptate deserunt impedit, aliquid iusto illo ipsum nesciunt repellat doloremque similique libero excepturi debitis cumque nisi ad dolor rem porro. Quibusdam amet exercitationem repellat voluptatem, ullam illum nobis aspernatur distinctio, omnis incidunt voluptas neque!",
                         "rate": 2
                     },
                     "ServiceTwo": {
                         "icon": "./icons/electricity.png",
                         "title": "Exemplu 2",
-                        "body": "Body two || Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates accusamus in maiores nobis, assumenda illum dicta voluptate deserunt impedit, aliquid iusto illo ipsum nesciunt repellat doloremque similique libero excepturi debitis cumque nisi ad dolor rem porro. Quibusdam amet exercitationem repellat voluptatem, ullam illum nobis aspernatur distinctio, omnis incidunt voluptas neque!",
+                        "body": "Textul care contine informatii despre exemplul 2 || Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates accusamus in maiores nobis, assumenda illum dicta voluptate deserunt impedit, aliquid iusto illo ipsum nesciunt repellat doloremque similique libero excepturi debitis cumque nisi ad dolor rem porro. Quibusdam amet exercitationem repellat voluptatem, ullam illum nobis aspernatur distinctio, omnis incidunt voluptas neque!",
                         "rate": 4
                     },
                     "ServiceThree": {
                         "icon": "./icons/paint-roller.png",
                         "title": "Exemplu 3",
-                        "body": "Body three || ",
+                        "body": "Textul care contine informatii despre exemplul 3 || ",
                         "rate": 5
                     },
                     "ServiceFour": {
                         "icon": "./icons/pipes.png",
                         "title": "Exemplu 4",
-                        "body": "Body four || ",
+                        "body": "Textul care contine informatii despre exemplul 4 || ",
                         "rate": 5
                     },
                     "ServiceFive": {
                         "icon": "./icons/construction-worker.png",
                         "title": "Exemplu 5",
-                        "body": "Body five || ",
+                        "body": "Textul care contine informatii despre exemplul 5 || ",
                         "rate": 5
                     },
                     "ServiceSix": {
                         "icon": "./icons/electricity.png",
                         "title": "Exemplu 6",
-                        "body": "Body six || ",
+                        "body": "Textul care contine informatii despre exemplul 6 || ",
                         "rate": 5
                     },
                     "ServiceSeven": {
                         "icon": "./icons/paint-roller.png",
                         "title": "Exemplu 7",
-                        "body": "Body seven || ",
+                        "body": "Textul care contine informatii despre exemplul 7 || ",
                         "rate": 5
                     },
                     "ServiceEight": {
                         "icon": "./icons/pipes.png",
                         "title": "Exemplu 8",
-                        "body": "Body eight || ",
+                        "body": "Textul care contine informatii despre exemplul 8 || ",
                         "rate": 5
                     }
                 }
@@ -70,17 +70,17 @@ export default {
                 "Title": "Galerie",
                 "Job": [
                     {
-                        "Title": "Lucrarea 1",
+                        "Title": "Santier 1",
                         "Before": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg'],
                         "After": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg']
                     },
                     {
-                        "Title": "Lucrarea 2",
+                        "Title": "Santier 2",
                         "Before": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg'],
                         "After": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg']
                     },
                     {
-                        "Title": "Lucrarea 3",
+                        "Title": "Santier 3",
                         "Before": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg'],
                         "After": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg']
                     }

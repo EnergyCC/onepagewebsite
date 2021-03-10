@@ -536,9 +536,13 @@ a {
   position: absolute;
   top: 2%;
   right: 5%;
-  font-size: 3rem;
+  font-size: 4rem;
   filter: invert(100);
   cursor: pointer;
+}
+
+.exitBtn i:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .prevImage {
