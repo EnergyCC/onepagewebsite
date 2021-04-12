@@ -72,17 +72,20 @@ export default {
                     {
                         "Title": "Santier 1",
                         "Before": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg'],
-                        "After": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg']
+                        "After": ['./images/gallery/gallery_image_1.jpg', './images/gallery/gallery_image_2.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_5.jpg'],
+                        "Description": "Descrierea santierului 1. </br>Aici vine descrierea santierului, cat spatiu, ce s-a schimbat, durata?"
                     },
                     {
                         "Title": "Santier 2",
                         "Before": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg'],
-                        "After": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg']
+                        "After": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg'],
+                        "Description": "Descrierea santierului 2. Aici vine descrierea santierului, cat spatiu, ce s-a schimbat, durata?"
                     },
                     {
                         "Title": "Santier 3",
                         "Before": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg'],
-                        "After": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg']
+                        "After": ['./images/gallery/gallery_image_5.jpg', './images/gallery/gallery_image_4.jpg', './images/gallery/gallery_image_3.jpg', './images/gallery/gallery_image_2.jpg'],
+                        "Description": "Descrierea santierului 3. Aici vine descrierea santierului, cat spatiu, ce s-a schimbat, durata?"
                     }
                 ]
             },

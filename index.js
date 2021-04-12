@@ -200,6 +200,8 @@ let lightBoxImage = document.querySelector('.lightboxImage');
 let exitButton = document.querySelector('.exitBtn');
 let previousGalleryButton = document.querySelector('.prevImage');
 let nextGalleryButton = document.querySelector('.nextImage');
+let jobDescriptionContainer = document.querySelector('.descriptionContainer');
+let galleryContainer = document.querySelector('.galleryContainer');
 
 for (let i = 0; i < galleryTabsArray.length; i++) {
     let newDiv = document.createElement('div'); //creates new div
@@ -208,7 +210,8 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
     newDiv.classList.add('galleryBarTab'); //sets a new class to the created div, for css purposes only
 
     // This sets the first element as the default gallery element
-    if (i === 0) {
+    if (i === 0) {        
+        jobDescriptionContainer.innerHTML = galleryTabsArray[i].Description;
         newDiv.classList.add('galleryBar--active'); //sets the first tab as the highlighted one
         for (let j = 0; j < galleryTabsArray[i].Before.length; j++) {
             let newImageTab = document.createElement('IMG'); //creates a new image element
@@ -239,7 +242,7 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
                 lightBoxImage.appendChild(newImageGallery);
             });
         }
-        galleryImageContents.style.maxHeight = galleryImageContents.scrollHeight + 'px';
+        galleryContainer.style.maxHeight = galleryContainer.scrollHeight + 'px';
     };
     galleryTabArray.push(galleryTabContents.getElementsByTagName('div')[i]); //pushes the gallery tab divs into a new array
 
@@ -249,11 +252,12 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
         if (galleryTabContents.getElementsByTagName('div')[i].classList.contains('galleryBar--active')) {
             return;
         } else {
-            galleryImageContents.style.maxHeight = '0px';
+            galleryContainer.style.maxHeight = '0px';
             setTimeout(() => {
                 galleryTabArray.forEach(tabElement => {
                     tabElement.classList.remove('galleryBar--active');
                 });
+                jobDescriptionContainer.innerHTML = galleryTabsArray[i].Description;
                 galleryTabContents.getElementsByTagName('div')[i].classList.add('galleryBar--active');
                 while (galleryTabBeforeImg.lastChild) {
                     galleryTabBeforeImg.removeChild(galleryTabBeforeImg.lastChild);
@@ -287,7 +291,7 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
                         lightBoxImage.appendChild(newImageGallery);
                     });
                 };
-                galleryImageContents.style.maxHeight = galleryImageContents.scrollHeight + 'px';
+                galleryContainer.style.maxHeight = galleryContainer.scrollHeight + 'px';
             }, 500);
         }
     })

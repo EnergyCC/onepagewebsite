@@ -447,14 +447,28 @@ a {
 }
 
 .galleryImageContent {
+  flex: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #ddd;
   padding: 0px 15px;
+}
+
+.galleryContainer {
+  display: flex;
+  flex-wrap: wrap;
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.5s;
+}
+
+.descriptionContainer {
+  flex: 30%;
+  overflow: hidden;
+  padding: 60px 20px 30px 50px;
+  text-align: justify;
+  background-color: #ddd;
 }
 
 .galleryContentBefore {
@@ -467,6 +481,7 @@ a {
 .galleryContentBeforeTitle {
   font-size: 2rem;
   font-weight: 900;
+  padding-top: 40px;
 }
 .galleryContentBeforeImages {
   display: grid;
@@ -588,6 +603,7 @@ a {
   height: auto;
   object-fit: contain;
 }
+
 /* End of gallery */
 
 /* Start of Contact */
@@ -785,6 +801,15 @@ a {
     margin: 5px;
     bottom: 0;
     right: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .descriptionContainer {
+    flex: 100%;
+  }
+  .imagesContainer {
+    flex: 100%;
   }
 }
 
