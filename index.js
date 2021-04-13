@@ -211,7 +211,12 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
 
     // This sets the first element as the default gallery element
     if (i === 0) {        
-        jobDescriptionContainer.innerHTML = galleryTabsArray[i].Description;
+        galleryTabsArray[i].Description.forEach(descr =>{
+            let descriptionElement = document.createElement('h3');
+            jobDescriptionContainer.appendChild(descriptionElement);
+            descriptionElement.innerHTML = descr;
+        })
+        // jobDescriptionContainer.innerHTML = galleryTabsArray[i].Description;
         newDiv.classList.add('galleryBar--active'); //sets the first tab as the highlighted one
         for (let j = 0; j < galleryTabsArray[i].Before.length; j++) {
             let newImageTab = document.createElement('IMG'); //creates a new image element
@@ -253,11 +258,17 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
             return;
         } else {
             galleryContainer.style.maxHeight = '0px';
+            jobDescriptionContainer.innerHTML = '';
             setTimeout(() => {
                 galleryTabArray.forEach(tabElement => {
                     tabElement.classList.remove('galleryBar--active');
                 });
-                jobDescriptionContainer.innerHTML = galleryTabsArray[i].Description;
+                galleryTabsArray[i].Description.forEach(descr =>{
+                    let descriptionElement = document.createElement('h3');
+                    jobDescriptionContainer.appendChild(descriptionElement);
+                    descriptionElement.innerHTML = descr;
+                })
+                // jobDescriptionContainer.innerHTML = galleryTabsArray[i].Description;
                 galleryTabContents.getElementsByTagName('div')[i].classList.add('galleryBar--active');
                 while (galleryTabBeforeImg.lastChild) {
                     galleryTabBeforeImg.removeChild(galleryTabBeforeImg.lastChild);
