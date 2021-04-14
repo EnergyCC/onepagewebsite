@@ -6,9 +6,22 @@ const prevBtn = document.querySelector('#prev')
 const intervalTime = 5000;
 let slideInterval;
 
-let language;
+var languageElement = document.getElementById('languageSelect');
+let language = languageElement.value;
+if(localStorage.getItem('language')) language = localStorage.getItem('language');
+// language = localStorage.getItem('language');
+languageElement.value = language;
+console.log(language.value)
 
-language = 0;
+// language = document.querySelector('.languageSelect').value;
+languageElement.addEventListener('change', ()=>{
+    language = languageElement.value;
+    localStorage.setItem('language', language);
+    location.reload();
+
+})
+
+
 
 let DOMcontent = document.querySelectorAll('body');
 // console.log(DOMcontent);
@@ -25,38 +38,38 @@ document.querySelector('.servicesLink').innerHTML = jsonData.Language[language].
 document.querySelector('.galleryLink').innerHTML = jsonData.Language[language].Navigation.Gallery;
 document.querySelector('.contactLink').innerHTML = jsonData.Language[language].Navigation.Contact;
 // landing page
-document.querySelector('#slideOne').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Landing.SlideOne[0];
-document.querySelector('#slideTwo').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Landing.SlideTwo[0];
-document.querySelector('#slideThree').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Landing.SlideThree[0];
-document.querySelector('#slideOne').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Landing.SlideOne[1];
-document.querySelector('#slideTwo').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Landing.SlideTwo[1];
-document.querySelector('#slideThree').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Landing.SlideThree[1];
+document.querySelector('#slideOne').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Landing.SlideOne[0];
+document.querySelector('#slideTwo').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Landing.SlideTwo[0];
+document.querySelector('#slideThree').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Landing.SlideThree[0];
+document.querySelector('#slideOne').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Landing.SlideOne[1];
+document.querySelector('#slideTwo').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Landing.SlideTwo[1];
+document.querySelector('#slideThree').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Landing.SlideThree[1];
 
 // Services page
-document.querySelector('.serviceTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceTitle;
+document.querySelector('.serviceTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Services.ServiceTitle;
 
-document.querySelector('.serviceOne').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceOne.icon;
-document.querySelector('.serviceTwo').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceTwo.icon;
-document.querySelector('.serviceThree').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceThree.icon;
-document.querySelector('.serviceFour').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceFour.icon;
-document.querySelector('.serviceFive').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceFive.icon;
-document.querySelector('.serviceSix').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceSix.icon;
-document.querySelector('.serviceSeven').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceSeven.icon;
-document.querySelector('.serviceEight').getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceEight.icon;
+document.querySelector('.serviceOne').getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceOne.icon;
+document.querySelector('.serviceTwo').getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceTwo.icon;
+document.querySelector('.serviceThree').getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceThree.icon;
+document.querySelector('.serviceFour').getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceFour.icon;
+document.querySelector('.serviceFive').getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceFive.icon;
+document.querySelector('.serviceSix').getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceSix.icon;
+document.querySelector('.serviceSeven').getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceSeven.icon;
+document.querySelector('.serviceEight').getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceEight.icon;
 
-document.querySelector('.serviceOne').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.title;
-document.querySelector('.serviceTwo').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceTwo.title;
-document.querySelector('.serviceThree').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceThree.title;
-document.querySelector('.serviceFour').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFour.title;
-document.querySelector('.serviceFive').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceFive.title;
-document.querySelector('.serviceSix').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSix.title;
-document.querySelector('.serviceSeven').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceSeven.title;
-document.querySelector('.serviceEight').getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceEight.title;
+document.querySelector('.serviceOne').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceOne.title;
+document.querySelector('.serviceTwo').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceTwo.title;
+document.querySelector('.serviceThree').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceThree.title;
+document.querySelector('.serviceFour').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceFour.title;
+document.querySelector('.serviceFive').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceFive.title;
+document.querySelector('.serviceSix').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceSix.title;
+document.querySelector('.serviceSeven').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceSeven.title;
+document.querySelector('.serviceEight').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceEight.title;
 
-document.querySelector('.galleryTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Gallery.Title;
+document.querySelector('.galleryTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Gallery.Title;
 
 
-document.querySelector('.contactTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Contact.Title;
+document.querySelector('.contactTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Contact.Title;
 
 
 
@@ -153,12 +166,12 @@ let calculatorTotal = document.querySelector('.calculatorTotal');
 
 // get info card data
 let cardData = document.querySelector('.servicesInformation');
-cardData.getElementsByTagName('img')[0].src = jsonData.Language[0].Services.ServiceList.ServiceOne.icon
-cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.title;
-cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[0].Services.ServiceList.ServiceOne.body;
+cardData.getElementsByTagName('img')[0].src = jsonData.Language[language].Services.ServiceList.ServiceOne.icon
+cardData.getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceOne.title;
+cardData.getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceOne.body;
 
 //function to add event listener for clicks to change the shadow of the 
-let cardDataArray = [jsonData.Language[0].Services.ServiceList.ServiceOne, jsonData.Language[0].Services.ServiceList.ServiceTwo, jsonData.Language[0].Services.ServiceList.ServiceThree, jsonData.Language[0].Services.ServiceList.ServiceFour, jsonData.Language[0].Services.ServiceList.ServiceFive, jsonData.Language[0].Services.ServiceList.ServiceSix, jsonData.Language[0].Services.ServiceList.ServiceSeven, jsonData.Language[0].Services.ServiceList.ServiceEight];
+let cardDataArray = [jsonData.Language[language].Services.ServiceList.ServiceOne, jsonData.Language[language].Services.ServiceList.ServiceTwo, jsonData.Language[language].Services.ServiceList.ServiceThree, jsonData.Language[language].Services.ServiceList.ServiceFour, jsonData.Language[language].Services.ServiceList.ServiceFive, jsonData.Language[language].Services.ServiceList.ServiceSix, jsonData.Language[language].Services.ServiceList.ServiceSeven, jsonData.Language[language].Services.ServiceList.ServiceEight];
 let serviceArray = [serviceOneEv, serviceTwoEv, serviceThreeEv, serviceFourEv, serviceFiveEv, serviceSixEv, serviceSevenEv, serviceEightEv];
 
 
@@ -190,7 +203,7 @@ for (let i = 0; i < serviceArray.length; i++) {
 //gallery content
 
 let galleryTabContents = document.querySelector('.galleryBar');
-let galleryTabsArray = jsonData.Language[0].Gallery.Job;
+let galleryTabsArray = jsonData.Language[language].Gallery.Job;
 let galleryTabBeforeImg = document.querySelector('.galleryContentBeforeImages');
 let galleryTabAfterImg = document.querySelector('.galleryContentAfterImages');
 let galleryTabArray = [];

@@ -41,19 +41,46 @@ a {
 
 .navigation h1 {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .navigation a {
   padding: 10px;
   margin: 0 5px;
   font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-weight: 600;
+  /* letter-spacing: 1px; */
 }
 
 .navigation a:hover {
   border-bottom: 2px #047aed solid;
+}
+
+.language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.language form {
+  position: relative;
+  margin-left: 25px;
+  width: 80px;
+}
+
+.language select {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  height: 35px;
+  border: 0;
+  background: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 10px 10px 10px 10px;
+  white-space: pre-wrap;
 }
 
 /* end navigation styling */
