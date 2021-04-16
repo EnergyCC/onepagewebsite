@@ -19,6 +19,16 @@ app.get('/', (req, res) => {
     console.log('this works');
 });
 
+app.get('/createtable', (req, res) => {
+    let sql = 'create table languages(lang_id int primary key, content json);'
+    dbConnect.db.query(sql, (err, result) =>{
+        if(err) console.log(err);
+        else{
+            console.log('success');
+        }
+    })
+})
+
 
 app.listen(dbConnect.PORT, () => {
     console.log(
