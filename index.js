@@ -271,8 +271,8 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
             return;
         } else {
             galleryContainer.style.maxHeight = '0px';
-            jobDescriptionContainer.innerHTML = '';
             setTimeout(() => {
+                jobDescriptionContainer.innerHTML = '';
                 galleryTabArray.forEach(tabElement => {
                     tabElement.classList.remove('galleryBar--active');
                 });
