@@ -222,10 +222,14 @@ a {
 /* services section */
 
 .services {
-  background-color: #4c4845;
+  background: #454544;
+  background: -webkit-radial-gradient(center, #454544, #1f1f1f);
+  background: -moz-radial-gradient(center, #454544, #1f1f1f);
+  background: radial-gradient(ellipse at center, #424242, #1b1b1b),
+    url("../images/IMG_noise.png");
   color: #fff;
   padding-bottom: 100px;
-  box-shadow: 0px 15px 15px inset #333, 0px -15px 15px inset #333;
+  /* box-shadow: 0px 15px 15px inset #333, 0px -15px 15px inset #333; */
 }
 
 .services .serviceTitle {
@@ -583,6 +587,7 @@ a {
   filter: invert(100);
   cursor: pointer;
   border-radius: 25%;
+  z-index: 1;
 }
 
 .exitBtn i:hover {
@@ -629,7 +634,8 @@ a {
 }
 .lightboxImage img {
   position: relative;
-  width: 80%;
+  width: 100%;
+  max-width: 1500px;
   height: auto;
   object-fit: contain;
 }
