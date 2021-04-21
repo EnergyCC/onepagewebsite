@@ -6,20 +6,19 @@ const prevBtn = document.querySelector('#prev')
 const intervalTime = 5000;
 let slideInterval;
 
-var languageElement = document.getElementById('languageSelect');
+let language = 0;
+
+/*var languageElement = document.getElementById('languageSelect');
 let language = languageElement.value;
 if(localStorage.getItem('language')) language = localStorage.getItem('language');
-// language = localStorage.getItem('language');
 languageElement.value = language;
-console.log(language.value)
 
-// language = document.querySelector('.languageSelect').value;
 languageElement.addEventListener('change', ()=>{
     language = languageElement.value;
     localStorage.setItem('language', language);
     location.reload();
 
-})
+}); */
 
 
 
@@ -67,6 +66,7 @@ document.querySelector('.serviceSeven').getElementsByTagName('p')[0].innerHTML =
 document.querySelector('.serviceEight').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Services.ServiceList.ServiceEight.title;
 
 document.querySelector('.galleryTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Gallery.Title;
+document.querySelector('.galleryTitle').getElementsByTagName('p')[0].innerHTML = jsonData.Language[language].Gallery.Description;
 
 
 document.querySelector('.contactTitle').getElementsByTagName('h1')[0].innerHTML = jsonData.Language[language].Contact.Title;
@@ -235,6 +235,7 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
             let newImageTab = document.createElement('IMG'); //creates a new image element
             newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]); //sets the source of the new image element as the current index of the array
             newImageTab.style.cursor = 'pointer'; //css to make the image cursor into a pointer
+            newImageTab.classList.add('galleryImagesEffect');
             newImageTab.id = j
             galleryTabBeforeImg.appendChild(newImageTab); //appends the new image element to the before strip 
             newImageTab.addEventListener('click', e => {
@@ -251,6 +252,7 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
             let newImageTab = document.createElement('IMG');
             newImageTab.setAttribute('src', galleryTabsArray[i].After[j]);
             newImageTab.style.cursor = 'pointer';
+            newImageTab.classList.add('galleryImagesEffect');
             galleryTabAfterImg.appendChild(newImageTab);
             newImageTab.addEventListener('click', e => {
                 let newImageGallery = document.createElement('IMG');
@@ -281,7 +283,6 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
                     jobDescriptionContainer.appendChild(descriptionElement);
                     descriptionElement.innerHTML = descr;
                 })
-                // jobDescriptionContainer.innerHTML = galleryTabsArray[i].Description;
                 galleryTabContents.getElementsByTagName('div')[i].classList.add('galleryBar--active');
                 while (galleryTabBeforeImg.lastChild) {
                     galleryTabBeforeImg.removeChild(galleryTabBeforeImg.lastChild);
@@ -291,6 +292,7 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
                     newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]);
                     galleryTabBeforeImg.appendChild(newImageTab);
                     newImageTab.style.cursor = 'pointer';
+                    newImageTab.classList.add('galleryImagesEffect');
                     newImageTab.addEventListener('click', e => {
                         let newImageGallery = document.createElement('IMG');
                         newImageGallery.setAttribute('src', newImageTab.src);
@@ -307,6 +309,7 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
                     newImageTab.setAttribute('src', galleryTabsArray[i].After[k]);
                     galleryTabAfterImg.appendChild(newImageTab);
                     newImageTab.style.cursor = 'pointer';
+                    newImageTab.classList.add('galleryImagesEffect');
                     newImageTab.addEventListener('click', e => {
                         let newImageGallery = document.createElement('IMG');
                         newImageGallery.setAttribute('src', newImageTab.src);

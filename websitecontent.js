@@ -68,6 +68,7 @@ export default {
             },
             "Gallery": {
                 "Title": "Galerie",
+                "Description": "Galerie cu lucrari efectuate pana in prezent.",
                 "Job": [
                     {
                         "Title": "Santier 1",
@@ -90,7 +91,7 @@ export default {
                 ]
             },
             "Contact": {
-                "Title": "Contact"
+                "Title": "Contactati-ne"
             }
         },
 
