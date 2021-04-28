@@ -216,6 +216,11 @@ let nextGalleryButton = document.querySelector('.nextImage');
 let jobDescriptionContainer = document.querySelector('.descriptionContainer');
 let galleryContainer = document.querySelector('.galleryContainer');
 
+
+ 
+let galleryArrayStorage = [];
+let galleryArrayIndex;
+
 for (let i = 0; i < galleryTabsArray.length; i++) {
     let newDiv = document.createElement('div'); //creates new div
     newDiv.innerHTML = galleryTabsArray[i].Title; //sets the new div's innerHTML as one of the object titles from the array
@@ -228,18 +233,29 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
             let descriptionElement = document.createElement('h3');
             jobDescriptionContainer.appendChild(descriptionElement);
             descriptionElement.innerHTML = descr;
-        })
-        // jobDescriptionContainer.innerHTML = galleryTabsArray[i].Description;
+        });
+        let descriptionFloorPlan = document.createElement('img');
+        jobDescriptionContainer.appendChild(descriptionFloorPlan);
+        descriptionFloorPlan.setAttribute('src', galleryTabsArray[i].Plan);
+        descriptionFloorPlan.classList.add('galleryDescriptionPlan');
+        descriptionFloorPlan.classList.add('galleryImagesEffect');
+        descriptionFloorPlan.addEventListener('click', () =>{
+            let lightboxGalleryImage = document.createElement('IMG');
+            lightboxGalleryImage.setAttribute('src', descriptionFloorPlan.src);
+            lightBoxDiv.classList.add('lightbox--active');
+            document.body.style.overflow = 'hidden';
+            lightBoxImage.appendChild(lightboxGalleryImage);
+        });
+
         newDiv.classList.add('galleryBar--active'); //sets the first tab as the highlighted one
         for (let j = 0; j < galleryTabsArray[i].Before.length; j++) {
             let newImageTab = document.createElement('IMG'); //creates a new image element
             newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]); //sets the source of the new image element as the current index of the array
-            newImageTab.style.cursor = 'pointer'; //css to make the image cursor into a pointer
             newImageTab.classList.add('galleryImagesEffect');
             newImageTab.id = j
-            galleryTabBeforeImg.appendChild(newImageTab); //appends the new image element to the before strip 
+            galleryTabBeforeImg.appendChild(newImageTab); //appends the new image element to the before strip
             newImageTab.addEventListener('click', e => {
-                let newImageGallery = document.createElement('IMG'); //creates a new image element
+                let newImageGallery = document.createElement('IMG'); //creates a new image element for the full page lightbox html gallery element
                 newImageGallery.setAttribute('src', newImageTab.src); //sets the source of the new element as the current image source
                 newImageGallery.id = j;
                 lightBoxDiv.classList.add('lightbox--active'); //sets the lightbox as active to show on screen
@@ -248,41 +264,54 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
                 // console.log(newImageGallery);
             });
         };
-        for (let j = 0; j < galleryTabsArray[i].After.length; j++) {
-            let newImageTab = document.createElement('IMG');
-            newImageTab.setAttribute('src', galleryTabsArray[i].After[j]);
-            newImageTab.style.cursor = 'pointer';
-            newImageTab.classList.add('galleryImagesEffect');
-            galleryTabAfterImg.appendChild(newImageTab);
-            newImageTab.addEventListener('click', e => {
-                let newImageGallery = document.createElement('IMG');
-                newImageGallery.setAttribute('src', newImageTab.src);
-                lightBoxDiv.classList.add('lightbox--active');
-                document.body.style.overflow = 'hidden';
-                lightBoxImage.appendChild(newImageGallery);
+        for (let j = 0; j < galleryTabsArray[i].After.length; j++) {  //creates the after strip for the first element
+            let newImageTab = document.createElement('IMG');    //creates new image element
+            newImageTab.setAttribute('src', galleryTabsArray[i].After[j]);      //sets the source of the image to the current index of the array
+            newImageTab.classList.add('galleryImagesEffect');       //adds the css class to the image
+            galleryTabAfterImg.appendChild(newImageTab);        //appends the newly created image to the gallery at the after strip
+            newImageTab.addEventListener('click', e => {        //event listener for the new image element for the full screen lightbox html gallery element
+                let newImageGallery = document.createElement('IMG');        //creates a new image element for the full screen lightbox
+                newImageGallery.setAttribute('src', newImageTab.src);       //sets the attribute of the new element to the image source so it can be appended without problems
+                lightBoxDiv.classList.add('lightbox--active');      //adds the active class to the lightbox, showing it on screen
+                document.body.style.overflow = 'hidden';        //sets the overflow of the body to remove the scrollbar on the side
+                lightBoxImage.appendChild(newImageGallery);     //appends the created image to the full screen lightbox
             });
         }
-        galleryContainer.style.maxHeight = galleryContainer.scrollHeight + 'px';
+        galleryContainer.style.maxHeight = galleryContainer.scrollHeight + 'px';        //sets the scroll height of the gallery element to be the max size of the scroll
     };
     galleryTabArray.push(galleryTabContents.getElementsByTagName('div')[i]); //pushes the gallery tab divs into a new array
 
 
     // event listener for every gallery element added dynamically
     newDiv.addEventListener('click', e => {
-        if (galleryTabContents.getElementsByTagName('div')[i].classList.contains('galleryBar--active')) {
+        if (galleryTabContents.getElementsByTagName('div')[i].classList.contains('galleryBar--active')) {  //stops the event listener if the gallery tab is already selected, so it can't be spammed
             return;
         } else {
-            galleryContainer.style.maxHeight = '0px';
-            setTimeout(() => {
-                jobDescriptionContainer.innerHTML = '';
-                galleryTabArray.forEach(tabElement => {
+            galleryContainer.style.maxHeight = '0px';       //on click it sets the size of the container to 0 px for the animation
+            setTimeout(() => {      //timeout function so the animation plays smoothly
+                jobDescriptionContainer.innerHTML = '';         //removes the description of the element at the beginning so it doesn't look weird
+                galleryTabArray.forEach(tabElement => {     //removes the active class, which highlights, from all the tabs
                     tabElement.classList.remove('galleryBar--active');
                 });
-                galleryTabsArray[i].Description.forEach(descr =>{
+                galleryTabsArray[i].Description.forEach(descr =>{       //creates an h3 element for every element of the description array and appends it to the description
                     let descriptionElement = document.createElement('h3');
                     jobDescriptionContainer.appendChild(descriptionElement);
                     descriptionElement.innerHTML = descr;
-                })
+                });
+
+                let descriptionFloorPlan = document.createElement('img');
+                jobDescriptionContainer.appendChild(descriptionFloorPlan);
+                descriptionFloorPlan.setAttribute('src', galleryTabsArray[i].Plan);
+                descriptionFloorPlan.classList.add('galleryDescriptionPlan');
+                descriptionFloorPlan.classList.add('galleryImagesEffect');
+                descriptionFloorPlan.addEventListener('click', () =>{
+                    let lightboxGalleryImage = document.createElement('IMG');
+                    lightboxGalleryImage.setAttribute('src', descriptionFloorPlan.src);
+                    lightBoxDiv.classList.add('lightbox--active');
+                    document.body.style.overflow = 'hidden';
+                    lightBoxImage.appendChild(lightboxGalleryImage);
+                });
+
                 galleryTabContents.getElementsByTagName('div')[i].classList.add('galleryBar--active');
                 while (galleryTabBeforeImg.lastChild) {
                     galleryTabBeforeImg.removeChild(galleryTabBeforeImg.lastChild);
@@ -291,7 +320,6 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
                     let newImageTab = document.createElement('IMG');
                     newImageTab.setAttribute('src', galleryTabsArray[i].Before[j]);
                     galleryTabBeforeImg.appendChild(newImageTab);
-                    newImageTab.style.cursor = 'pointer';
                     newImageTab.classList.add('galleryImagesEffect');
                     newImageTab.addEventListener('click', e => {
                         let newImageGallery = document.createElement('IMG');
@@ -308,7 +336,6 @@ for (let i = 0; i < galleryTabsArray.length; i++) {
                     let newImageTab = document.createElement('IMG');
                     newImageTab.setAttribute('src', galleryTabsArray[i].After[k]);
                     galleryTabAfterImg.appendChild(newImageTab);
-                    newImageTab.style.cursor = 'pointer';
                     newImageTab.classList.add('galleryImagesEffect');
                     newImageTab.addEventListener('click', e => {
                         let newImageGallery = document.createElement('IMG');

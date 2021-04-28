@@ -653,10 +653,16 @@ a {
   opacity: 1;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .galleryImagesEffect:hover {
   opacity: 0.4;
+}
+
+.galleryDescriptionPlan {
+  padding-top: 30px;
+  width: 100%;
 }
 
 /* End of gallery */
